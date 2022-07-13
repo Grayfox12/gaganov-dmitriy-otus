@@ -4,6 +4,11 @@ function maxItemAssociation(historyPurchases){
     for (let purchase of historyPurchases){
         for(let i =0; i < purchase.length; i ++){
             for(let j = i+1; j < purchase.length; j++){
+                if(goodsMap[purchase[j]] && goodsMap[purchase[i]] && (goodsMap[purchase[j]] !== goodsMap[purchase[i]])){
+                    let _set = Array.from(new Set([...goodsMap[purchase[j]],...goodsMap[purchase[i]]]))
+                    goodsMap[purchase[j]] = _set
+                    goodsMap[purchase[i]] = _set
+                }
                 if(!goodsMap[purchase[i]] && !goodsMap[purchase[j]]){
                     goodsMap[purchase[i]] = [purchase[i],purchase[j]]
                     goodsMap[purchase[j]] = goodsMap[purchase[i]];
@@ -16,7 +21,13 @@ function maxItemAssociation(historyPurchases){
                     goodsMap[purchase[i]].push(purchase[j])
                     goodsMap[purchase[j]]= goodsMap[purchase[i]]
                 }
-                if(!maxAssociation || maxAssociation.length<goodsMap[purchase[i]].length)maxAssociation= goodsMap[purchase[i]]
+
+                if(!maxAssociation || maxAssociation.length<goodsMap[purchase[j]].length)maxAssociation= goodsMap[purchase[j]]
+                else if(maxAssociation.length === goodsMap[purchase[j]].length){
+                    maxAssociation.sort()
+                    goodsMap[purchase[j]].sort()
+                    if(maxAssociation[0]>goodsMap[purchase[j]][0])maxAssociation = goodsMap[purchase[j]]
+                }
             }
         }
     }
