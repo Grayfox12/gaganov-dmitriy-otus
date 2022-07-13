@@ -6,8 +6,9 @@ function maxItemAssociation(historyPurchases){
             for(let j = i+1; j < purchase.length; j++){
                 if(goodsMap[purchase[j]] && goodsMap[purchase[i]] && (goodsMap[purchase[j]] !== goodsMap[purchase[i]])){
                     let _set = Array.from(new Set([...goodsMap[purchase[j]],...goodsMap[purchase[i]]]))
-                    goodsMap[purchase[j]] = _set
-                    goodsMap[purchase[i]] = _set
+                    _set.forEach(key=>{
+                        goodsMap[key] = _set
+                    })
                 }
                 if(!goodsMap[purchase[i]] && !goodsMap[purchase[j]]){
                     goodsMap[purchase[i]] = [purchase[i],purchase[j]]
