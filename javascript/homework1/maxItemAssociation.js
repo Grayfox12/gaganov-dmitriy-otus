@@ -24,7 +24,7 @@ function maxItemAssociation(historyPurchases){
                 }
 
                 if(!maxAssociation || maxAssociation.length<goodsMap[purchase[j]].length)maxAssociation= goodsMap[purchase[j]]
-                else if(maxAssociation.length === goodsMap[purchase[j]].length){
+                else if(maxAssociation !==goodsMap[purchase[j]] && maxAssociation.length === goodsMap[purchase[j]].length){
                     maxAssociation.sort()
                     goodsMap[purchase[j]].sort()
                     if(maxAssociation[0]>goodsMap[purchase[j]][0])maxAssociation = goodsMap[purchase[j]]
