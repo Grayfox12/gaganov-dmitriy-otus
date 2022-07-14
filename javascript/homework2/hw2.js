@@ -10,7 +10,7 @@ function promiseReduce(asyncFunctions, reduce, initialValue) {
                     return null
                 },
                 error=>{
-                    return null/*new Promise(resolve => resolve())*/
+                    return null
                 })
     return firstFn.then(next => _initialValue)
 }
