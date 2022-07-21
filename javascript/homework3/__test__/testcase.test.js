@@ -154,3 +154,9 @@ test('test getPath on child of tag with id',()=>{
     expect(getPath(HTMLCollection[0])).toEqual('#testing_id a')
     expect(document.querySelectorAll(getPath(HTMLCollection[0])).length).toEqual(1)
 })
+
+test('test getPath of tag with id',()=>{
+    let HTMLElement = document.getElementById('testing_id')
+    expect(getPath(HTMLElement)).toEqual('#testing_id')
+    expect(document.querySelectorAll(getPath(HTMLElement)).length).toEqual(1)
+})
