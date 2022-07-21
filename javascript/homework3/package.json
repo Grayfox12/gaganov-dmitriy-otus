@@ -1,0 +1,21 @@
+{
+    "name": "hw3",
+    "version": "0.0.1",
+    "scripts": {
+        "test": "jest"
+    },
+    "private": true,
+    "devDependencies": {
+        "jest": "^25.1.0"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js"
+        ],
+        "moduleDirectories": [
+            "node_modules",
+            "bower_components",
+            "shared"
+        ]
+    }
+}
