@@ -11,3 +11,5 @@ function getPath(node){
     if(node.id) return `#${node.id}`
     return `${getPath(node.parentElement)} ${nodeSelector(node)}`
 }
+
+exports.getPath = getPath
