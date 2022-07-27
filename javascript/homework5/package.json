@@ -1,0 +1,9 @@
+{
+    "name": "hw5",
+    "version": "0.0.1",
+    "scripts": {
+        "genfile": "node generate.js",
+        "sortfile": "node --max-old-space-size=20 sortfile.js"
+    },
+    "private": true
+}
