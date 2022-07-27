@@ -1,5 +1,5 @@
 {
-    "name": "hw4",
+    "name": "hw5",
     "version": "0.0.1",
     "scripts": {
         "genfile": "node generate.js",
