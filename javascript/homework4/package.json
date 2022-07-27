@@ -1,0 +1,8 @@
+{
+    "name": "hw4",
+    "version": "0.0.1",
+    "scripts": {
+        "tree": "node hw4.js"
+    },
+    "private": true
+}
